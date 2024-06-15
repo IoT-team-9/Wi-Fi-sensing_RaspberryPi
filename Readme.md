@@ -1,2 +1,10 @@
-This is our term Project of IoT
-Using Wi-Fi sensing
+# Wi-Fi sensing with Raspberry Pi 4
+***
+#### This is a Term project of IoT (Internet of Things)    
+# Recognition Human Activities
+***
+#### Empty   
+#### Sit   
+#### Stand   
+#### Walk   
+#### Fall    
