@@ -11,5 +11,17 @@
 ## Progress setting invironment
 ### Installing Raspberry pi Image and connecting
 ### Install Nexmon csi
-[NexmonLink](https://github.com/seemoo-lab/nexmon_csi)
+[Nexmon_GitHub_Link](https://github.com/seemoo-lab/nexmon_csi)   
 ![nexmonInstall](https://github.com/IoT-team-9/Wi-Fi-sensing_RaspberryPi/blob/main/Image/nexmon.png)
+
+## Collect CSI for test first time
+
+#### Environment setting
+Raspberry Pi, iptiem router 2.4GHx, laptop
+Location : Inside a typical home 
+2 experiments
+![test1](https://github.com/IoT-team-9/Wi-Fi-sensing_RaspberryPi/blob/main/Image/iot_csi_plot_1.jpg)
+![test2](https://github.com/IoT-team-9/Wi-Fi-sensing_RaspberryPi/blob/main/Image/iot_csi_plot_2.jpg)
+
+
+## Collect CSI for test in incubator
