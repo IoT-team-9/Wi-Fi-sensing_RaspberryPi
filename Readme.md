@@ -12,4 +12,4 @@
 ### Installing Raspberry pi Image and connecting
 ### Install Nexmon csi
 [NexmonLink](https://github.com/seemoo-lab/nexmon_csi, "Nexmon CSI Link")
-![nexmonInstall] (Wi-Fi-sensing_RaspberryPi/Image/nexmon.png)
+![nexmonInstall] (/Image/nexmon.png)
