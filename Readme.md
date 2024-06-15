@@ -27,5 +27,11 @@
 #### test2
 ![test2](https://github.com/IoT-team-9/Wi-Fi-sensing_RaspberryPi/blob/main/Image/iot_csi_plot_2.jpg)
 
+## Collect CSI data
+1. Empty
+2. Stand
+3. Sit
+4. Walk
+5. Fall
 
-## Collect CSI for test in incubator
+
