@@ -4,6 +4,8 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from keras.utils import change_to_categorical
+from keras.models import Sequential
+from keras.layers import Dense, Dropout
 
 
 # create db 
@@ -28,7 +30,7 @@ data = pd.read_csv('csi_data.csv')
 X = data[['amplitude', 'phase']].values
 y = data['label'].values  # label: walk, sit down, fall down, non
 
-# data preprocessing
+### data preprocessing ###
 # label encode 0 ~ 4
 label_mapping = {'walking': 0, 'sitting': 1, 'falling': 2, 'standing': 3, 'none': 4}
 y = np.array([label_mapping[label] for label in y])
@@ -44,3 +46,28 @@ X_test = scaler.transform(X_test)
 # change data into categorical label
 y_train = change_to_categorical(y_train, num_classes=5)
 y_test = change_to_categorical(y_test, num_classes=5)
+
+
+### model learning ###
+
+learning_model = Sequential()
+
+learning_model.add(Dense(64, input_dim=X_train.shape[1], activation='relu'))
+learning_model.add(Dropout(0.5))
+learning_model.add(Dense(64, activation='relu'))
+learning_model.add(Dropout(0.5))
+learning_model.add(Dense(5, activation='softmax'))  
+
+learning_model.compile(
+    loss='categorical_crossentropy', 
+    optimizer='adam', 
+    metrics=['accuracy']
+    )
+
+data_history = learning_model.fit(
+    X_train, 
+    y_train, 
+    epochs=50, 
+    batch_size=32, 
+    validate_data=(X_test, y_test)
+    )
