@@ -6,6 +6,11 @@ from sklearn.preprocessing import StandardScaler
 from keras.utils import change_to_categorical
 from keras.models import Sequential
 from keras.layers import Dense, Dropout
+from sklearn.metrics import confusion_matrix, classification_report
+import pandas as pd
+import numpy as np
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
 
 
 # create db 
@@ -36,7 +41,7 @@ label_mapping = {'walking': 0, 'sitting': 1, 'falling': 2, 'standing': 3, 'none'
 y = np.array([label_mapping[label] for label in y])
 
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1, random_state=42)
 
 # standardization
 scaler = StandardScaler()
@@ -71,3 +76,24 @@ data_history = learning_model.fit(
     batch_size=32, 
     validate_data=(X_test, y_test)
     )
+
+## model evaluation ##
+
+loss, accuracy = learning_model.evaluate(X_test, y_test)
+print(f'Test Accuracy: {accuracy * 100:.2f}%')
+
+y_pred = learning_model.predict(X_test)
+y_pred_classes = np.argmax(y_pred, axis=1)
+y_true = np.argmax(y_test, axis=1)
+
+conf_matrix = confusion_matrix(y_true, y_pred_classes)
+class_report = classification_report(
+    y_true, 
+    y_pred_classes, 
+    target_names=['walking', 'sitting', 'falling', 'standing', 'none']
+    )
+
+print('Confusion Matrix')
+print(conf_matrix)
+print('\nClassification Report')
+print(class_report)
