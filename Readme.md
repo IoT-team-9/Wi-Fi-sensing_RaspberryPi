@@ -11,7 +11,7 @@
 ## Progress setting invironment
 ### Installing Raspberry pi Image and connecting
 ### Install Nexmon csi
-[Nexmon_GitHub_Link](https://github.com/seemoo-lab/nexmon_csi)   
+[Nexmon GitHub Respository](https://github.com/seemoo-lab/nexmon_csi)   
 ![nexmonInstall](https://github.com/IoT-team-9/Wi-Fi-sensing_RaspberryPi/blob/main/Image/nexmon.png)
 
 ## Collect CSI for test first time
@@ -27,11 +27,12 @@
 #### test2
 ![test2](https://github.com/IoT-team-9/Wi-Fi-sensing_RaspberryPi/blob/main/Image/iot_csi_plot_2.jpg)
 
-## Collect CSI data
+## Collect CSI data in AI Incubator
 1. Empty
 2. Stand
 3. Sit
 4. Walk
 5. Fall
 
-
+#### Measured for 5 minutes for each movement
+![walking]()
